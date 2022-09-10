@@ -1,4 +1,5 @@
 import string 
+from collections import OrderedDict
 class cipher:
 	def __init__(self, text, keyword):
 		self.open_alphabet = string.ascii_lowercase + chr(32)
