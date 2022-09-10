@@ -10,7 +10,7 @@ class cipher:
 		for char in self.open_alphabet:
 			if char not in self.keyword:
 				self.cipher_alphabet += char
-		self.cipher_alphabet = self.keyword + self.cipher_alphabet
+		self.cipher_alphabet = self.keyword + self.cipher_alphabet + chr(32)
 		count = 0
 		while count < len(self.text):
 			if tujuan == "encrypt":
