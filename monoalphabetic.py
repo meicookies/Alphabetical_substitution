@@ -11,6 +11,7 @@ class cipher:
 			if char not in self.keyword:
 				self.cipher_alphabet += char
 		self.cipher_alphabet = self.keyword + self.cipher_alphabet + chr(32)
+		self.cipher_alphabet = "".join(OrderedDict.fromkeys(self.cipher_alphabet))
 		count = 0
 		while count < len(self.text):
 			if tujuan == "encrypt":
