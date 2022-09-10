@@ -8,8 +8,11 @@ class cipher:
 		self.cipher_alphabet = str()
 		self.result_text = str()
 	def process(self, tujuan):
-		self.cipher_alphabet = self.keyword + self.open_alphabet + chr(32)
-		self.cipher_alphabet = str().join(OrderedDict.fromkeys(self.cipher_alphabet))
+		self.keyword = str().join(OrderedDict.fromkeys(self.keyword))
+		for char in self.open_alphabet:
+			if char not in self.keyword:
+				self.cipher_alphabet += char 
+		self.cipher_alphabet = self.keyword + self.cipher_alphabet
 		count = 0
 		while count < len(self.text):
 			if tujuan == "encrypt":
